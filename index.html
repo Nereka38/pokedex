@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Passions+Conflict&display=swap"
+        rel="stylesheet">
+    <script defer src="./js/app.js"></script>
+    <title>Kanto Pokedex</title>
+</head>
+
+<body>
+    <div id="scale-wrapper">
+    <main>
+        <!-- Contenedor de la Pokédex -->
+        <div id="pokedex">
+            <!-- Tapa de la Pokédex -->
+            <div id="right-tape"></div>
+        </div>
+        <!-- Parte Izquierda de la Pokédex -->
+        <div id="left">
+            <!-- Logo de la Tapa -->
+            <div id="logo"></div>
+            <!-- Fondo Parte Superior Izquierda -->
+            <div id="bg-curve1-left"></div>
+             <!-- Fondo Parte Inferior Izquierda -->
+            <div id="bg-curve2-left"></div>
+            <!-- Luces Parte Superior Izquierda -->
+            <div id="curve1-left">
+                <div id="button-glass">
+                    <div id="reflect"> </div>
+                </div>
+                <div id="mini-button-glass1"></div>
+                <div id="mini-button-glass2"></div>
+                <div id="mini-button-glass3"></div>
+            </div>
+             <!-- Bisagra Parte Central -->
+            <div id="curve2-left">
+                <div id="junction">
+                    <div id="junction1"></div>
+                    <div id="junction2"></div>
+                </div>
+            </div>
+            <!-- Pantalla donde se muestra el Pokémon -->
+            <div id="screen">
+                <div id="top-picture">
+                    <div id="button-top-picture1"></div>
+                    <div id="button-top-picture2"></div>
+                </div>
+                <div id="picture">
+                    <div id="image-loading">Loading...</div>
+                    <img src="#" alt="pokemon" class="pokemon-image" id="logo-pokemon">
+                </div>
+                <div id="button-bottom-picture"></div>
+                <div id="speakers">
+                    <div class="sp"></div>
+                    <div class="sp"></div>
+                    <div class="sp"></div>
+                    <div class="sp"></div>
+                </div>
+            </div>
+            <!-- Checkbox para abrir la Pokédex -->
+            <div id="open-container">
+                <input id="open" type="checkbox" />
+            </div>
+            <!-- Botones -->
+            <div id="big-black-button"></div>
+            <div id="search-button1"></div>
+            <div id="search-button2"></div>
+           <!-- Formulario de Búsqueda -->
+            <form class="form" id="search">
+                <input type="search" class="input-search" placeholder="Search" required />
+            </form>
+             <!-- Botones de Navegación -->
+            <div id="cross">
+                <div id="left-cross">
+                    <div id="leftT" class="button btn-prev"></div>
+                </div>
+                <div id="top-cross">
+                    <div id="upT"></div>
+                </div>
+                <div id="right-cross">
+                    <div id="rightT" class="button btn-next"></div>
+                </div>
+                <div id="mid-cross">
+                    <div id="midCircle"></div>
+                </div>
+                <div id="bot-cross">
+                    <div id="downT"></div>
+                </div>
+            </div>
+        </div>
+         <!-- Parte Derecha de la Pokédex (Estadísticas) -->
+        <div id="right">
+             <!-- Checkbox para cerrar la Pokédex -->
+            <div id="close-container">
+                <input id="close" type="checkbox" />
+            </div>
+            <!-- Pantalla de Estadísticas -->
+            <div id="stats-screen">
+                <div id="loading-screen">Loading...</div>
+                <div class="column left-column">
+                    <strong>Number:</strong> <span class="pokemon-number"></span><br />
+                    <strong>Name:</strong> <span class="pokemon-name"></span><br />
+                    <strong>Height:</strong> <span class="pokemon-height"></span><br />
+                    <strong>Weight:</strong> <span class="pokemon-weight"></span><br />
+                    <strong>Capture Rate:</strong> <span class="pokemon-capture"></span><br />
+                    <strong>Habitat:</strong> <span class="pokemon-habitat"></span><br />
+                </div>
+                <div class="column right-column">
+                    <strong>Type:</strong> <span class="pokemon-type"></span><br />
+                    <strong>Abilities:</strong> <span class="pokemon-abilities"></span><br />
+                    <strong>Stats:</strong> 
+                    <span>
+                    <ul class="pokemon-stats">
+                        <li>HP: <p class="stat-hp"></p></li>
+                        <li>Attack: <p class="stat-attack"></p></li>
+                        <li>Defense: <p class="stat-defense"></p></li>
+                        <li>Speed: <p class="stat-speed"></p></li>
+                    </ul>
+                </span>
+                    <br />
+                    <strong>Evolution:</strong> <span class="pokemon-evolution"></span><br />
+                </div>
+            </div>
+             <!-- Botones Azules -->
+            <div id="blue-buttons1">
+                <div class="blue-button" id="btn-abilities"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+            </div>
+            <div id="blue-buttons2">
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+                <div class="blue-button"></div>
+            </div>
+            <!-- Botones Adicionales -->
+            <div id="white-buttons1"></div>
+            <div id="white-buttons2"></div>
+            <div id="black-buttons1"></div>
+            <div id="black-buttons2"></div>
+            <div id="yellow-button"></div>
+            <div id="black-box1"></div>
+            <div id="black-box2"></div>
+            <!-- Fondos Curvos -->
+            <div id="bg-curve1-right"></div>
+            <div id="bg-curve2-right"></div>
+            <div id="curve1-right"></div>
+            <div id="curve2-right"></div>
+        </div>
+    </main>
+</div>
+</body>
+
+</html>

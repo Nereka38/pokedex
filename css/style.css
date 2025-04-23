@@ -1,0 +1,1245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Passions+Conflict&display=swap');
+
+/* Contenedor principal */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Inconsolata', monospace;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#pokedex {
+	width: 400px;
+	margin: 50px auto 0 auto;
+	transform: perspective(2500px);
+	transition: .3s;
+	position: absolute;
+	z-index: 0;
+}
+
+
+/* Tapa de la Pokédex */
+#right-tape {
+	width: 350px;
+	height: 500px;
+	transform-origin: right;
+	position: relative;
+}
+
+#right-tape:before {
+	content: "";
+	position: absolute;
+	perspective: 1500px;
+	overflow: hidden;
+	position: absolute;
+	transition: all 1s .3s;
+	transform-origin: 0 50%;
+
+}
+
+#right-tape:after {
+	transform: rotateY(180deg);
+	transition: all .3s .5s;
+	transform: rotateY(-180deg);
+
+}
+
+/* Parte Izquierda de la Pokédex */
+#left {
+	width: 400px;
+	height: 500px;
+	float: left;
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+}
+
+#logo {
+	width: 281px;
+	height: 99px;
+	background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/200653/logo.png') no-repeat left top;
+	z-index: 1;
+	position: absolute;
+	top: 220px;
+	left: 30px;
+}
+
+#bg-curve1-left {
+	width: 400px;
+	height: 80px;
+	background-color: #8b0000;
+
+	border-top-left-radius: 30px;
+	-webkit-border-top-left-radius: 30px;
+	-moz-border-top-left-radius: 30px;
+	-o-border-top-left-radius: 30px;
+}
+
+#bg-curve2-left {
+	width: 400px;
+	height: 420px;
+	background-color: #c00d0d;
+	cursor: pointer;
+
+	box-shadow: -10px 9px #5e0000;
+	-webkit-box-shadow: -10px 9px #5e0000;
+	-moz-box-shadow: -10px 9px #5e0000;
+	-o-box-shadow: -10px 9px #5e0000;
+
+	border-bottom-left-radius: 30px;
+	-webkit-border-bottom-left-radius: 30px;
+	-moz-border-bottom-left-radius: 30px;
+	-o-border-bottom-left-radius: 30px;
+}
+
+#curve1-left {
+	width: 201px;
+	height: 85px;
+	background-color: #8b0000;
+	float: left;
+	padding: 15px 0 0 15px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	box-shadow: -10px 9px #5e0000;
+	-webkit-box-shadow: -10px 9px #5e0000;
+	-moz-box-shadow: -10px 9px #5e0000;
+	-o-box-shadow: -10px 9px #5e0000;
+
+	border-bottom-right-radius: 85px 60px;
+	-webkit-border-bottom-right-radius: 85px 60px;
+	-moz-border-bottom-right-radius: 85px 60px;
+	-o-border-bottom-right-radius: 85px 60px;
+
+	border-top-left-radius: 30px;
+	-webkit-border-top-left-radius: 30px;
+	-moz-border-top-left-radius: 30px;
+	-o-border-top-left-radius: 30px;
+}
+
+#button-glass {
+	width: 60px;
+	height: 60px;
+	margin-right: 15px;
+	border: 5px solid #fff;
+	float: left;
+
+	box-shadow: 0 0 10px #490000;
+	-webkit-box-shadow: 0 0 10px #490000;
+	-moz-box-shadow: 0 0 10px #490000;
+	-o-box-shadow: 0 0 10px #490000;
+
+	background: radial-gradient(#05fbfb, #29abe3);
+	background: -webkit-radial-gradient(#05fbfb, #29abe3);
+	background: -moz-radial-gradient(#05fbfb, #29abe3);
+	background: -o-radial-gradient(#05fbfb, #29abe3);
+
+	border-radius: 35px;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	-o-border-radius: 35px;
+}
+
+#reflect {
+	width: 30px;
+	height: 18px;
+	margin: 3px 0 0 15px;
+	background: #fff;
+	opacity: 0.6;
+
+	border-radius: 15px 9px;
+	-webkit-border-radius: 15px 9px;
+	-moz-border-radius: 15px 9px;
+	-o-border-radius: 15px 9px;
+
+}
+
+#mini-button-glass1 {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	float: left;
+
+	box-shadow: 0 0 10px #490000;
+	-webkit-box-shadow: 0 0 10px #490000;
+	-moz-box-shadow: 0 0 10px #490000;
+	-o-box-shadow: 0 0 10px #490000;
+
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-o-border-radius: 20px;
+
+	background: radial-gradient(#fb7b7b, #fb0505);
+	background: -webkit-radial-gradient(#fb7b7b, #fb0505);
+	background: -moz-radial-gradient(#fb7b7b, #fb0505);
+	background: -o-radial-gradient(#fb7b7b, #fb0505);
+}
+
+#mini-button-glass2 {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	float: left;
+
+	box-shadow: 0 0 10px #490000;
+	-webkit-box-shadow: 0 0 10px #490000;
+	-moz-box-shadow: 0 0 10px #490000;
+	-o-box-shadow: 0 0 10px #490000;
+
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-o-border-radius: 20px;
+
+	background: radial-gradient(#fbfb9b, #fbfb05);
+	background: -webkit-radial-gradient(#fbfb9b, #fbfb05);
+	background: -moz-radial-gradient(#fbfb9b, #fbfb05);
+	background: -o-radial-gradient(#fbfb9b, #fbfb05);
+}
+
+#mini-button-glass3 {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	float: left;
+
+	box-shadow: 0 0 10px #490000;
+	-webkit-box-shadow: 0 0 10px #490000;
+	-moz-box-shadow: 0 0 10px #490000;
+	-o-box-shadow: 0 0 10px #490000;
+
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-o-border-radius: 20px;
+
+	background: radial-gradient(#b0fb7b, #50fb05);
+	background: -webkit-radial-gradient(#b0fb7b, #50fb05);
+	background: -moz-radial-gradient(#b0fb7b, #50fb05);
+	background: -o-radial-gradient(#b0fb7b, #50fb05);
+}
+
+#curve2-left {
+	width: 221px;
+	height: 451px;
+	background-color: #c00d0d;
+	float: right;
+
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	border-top-left-radius: 85px 60px;
+	-webkit-border-top-left-radius: 85px 60px;
+	-moz-border-top-left-radius: 85px 60px;
+	-o-border-top-left-radius: 85px 60px;
+}
+
+#junction {
+	width: 60px;
+	height: 451px;
+	float: right;
+
+	background: linear-gradient(left, #8b0000 0%, #c00d0d 50%, #8b0000 100%);
+	background: -webkit-linear-gradient(left, #8b0000 0%, #c00d0d 50%, #8b0000 100%);
+	background: -moz-linear-gradient(left, #8b0000 0%, #c00d0d 50%, #8b0000 100%);
+	background: -o-linear-gradient(left, #8b0000 0%, #c00d0d 50%, #8b0000 100%);
+}
+#junction1 {
+	height: 40px;
+	background-color: #5e0000;
+	opacity: 0.3;
+	margin-top: 50px;
+	margin-bottom: 262px;
+
+	border-top: 2px solid #330000;
+	border-bottom: 2px solid #330000;
+}
+#junction2 {
+	height: 40px;
+	background-color: #5e0000;
+	opacity: 0.3;
+
+	border-top: 2px solid #330000;
+	border-bottom: 2px solid #330000;
+}
+
+/* Pantalla de la Pokédex */
+#screen {
+	height: 245px;
+	width: 260px;
+	padding: 0 20px;
+	background-color: #b0b0b0;
+	float: left;
+
+	position: absolute;
+	top: 130px;
+	left: 19px;
+
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+}
+
+#screen:after {
+	content: "";
+	border-top: 40px solid #b0b0b0;
+	border-left: 40px solid #c00d0d;
+	height: 0;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+#top-picture {
+	margin: 6px auto;
+	width: 40px;
+}
+
+div#button-top-picture1 {
+	margin-right: 20px;
+}
+
+#button-top-picture1,
+#button-top-picture2 {
+	height: 8px;
+	width: 8px;
+	background-color: #c00d0d;
+	border: 1px solid #000;
+	float: left;
+
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+}
+
+#picture {
+	height: 175px;
+	width: 254px;
+	margin-top: 20px;
+	margin-bottom: 9px;
+	background-color: #fff;
+	border: 3px solid #494949;
+	clear: both;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+	background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b42d0ecb-fd80-4a6d-bb80-93fe2bb02389/dg3gmm4-32123f6b-2b8b-4a8c-a763-fe37e2d5baa4.png/v1/fit/w_448,h_448,q_70,strp/swamp_battle_background_by_kingtrapinch_dg3gmm4-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDQ4IiwicGF0aCI6IlwvZlwvYjQyZDBlY2ItZmQ4MC00YTZkLWJiODAtOTNmZTJiYjAyMzg5XC9kZzNnbW00LTMyMTIzZjZiLTJiOGItNGE4Yy1hNzYzLWZlMzdlMmQ1YmFhNC5wbmciLCJ3aWR0aCI6Ijw9NDQ4In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.olmQ24A1NNuWz7AYQhWeqHZtpEH7eFBRKeQ1jhFsODg');
+	background-size: cover;
+	background-position: center;
+}
+
+#picture img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+
+#image-loading {
+	position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+#button-bottom-picture {
+	height: 26px;
+	width: 26px;
+	background-color: #c00d0d;
+	margin-left: 35px;
+	float: left;
+
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-o-border-radius: 30px;
+
+	box-shadow: -2px 1px #5e0000;
+	-webkit-box-shadow: -2px 1px #5e0000;
+	-moz-box-shadow: -2px 1px #5e0000;
+	-o-box-shadow: -2px 1px #5e0000;
+
+	background: linear-gradient(top, #c00d0d 0%, #8b0000 80%);
+	background: -webkit-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
+	background: -moz-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
+	background: -o-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
+}
+
+#speakers {
+	float: right;
+	width: 75px;
+	height: 25px;
+	margin-right: 20px;
+}
+
+.sp {
+	height: 3px;
+	margin-bottom: 5px;
+	background-color: #494949;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-o-border-radius: 30px;
+}
+
+/* Checkbox para abrir la Pokédex */
+#open-container {
+	width: auto;
+	height: auto;
+}
+
+#open {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 240px;
+	left: 0px;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 2;
+}
+
+#open:checked~#right-tape {
+	transform: rotateY(-155deg);
+	box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+}
+
+#open:checked~#right-tape:before {
+	z-index: 5;
+	background-color: #00c3ff;
+	width: 300px;
+	height: 300px;
+	top: 0;
+	left: 0;
+	box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .1), 30px 0 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones */
+#big-black-button {
+	height: 35px;
+	width: 35px;
+	background-color: #000;
+
+	position: absolute;
+	top: 395px;
+	left: 30px;
+
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-o-border-radius: 100px;
+
+	background: linear-gradient(top, #43484d 0%, #222 80%);
+	background: -webkit-linear-gradient(top, #43484d 0%, #222 80%);
+	background: -moz-linear-gradient(top, #43484d 0%, #222 80%);
+	background: -o-linear-gradient(top, #43484d 0%, #222 80%);
+
+	box-shadow: -3px 2px #001c91;
+	-webkit-box-shadow: -3px 2px #000000;
+	-moz-box-shadow: -3px 2px #001c91;
+	-o-box-shadow: -3px 2px #001c91;
+}
+
+#search-button1 {
+	height: 13px;
+	width: 50px;
+
+	position: absolute;
+	top: 395px;
+	left: 85px;
+	cursor: pointer;
+
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-o-border-radius: 100px;
+
+	background: linear-gradient(top, #50fb05 0%, #057b05 100%);
+	background: -webkit-linear-gradient(top, #50fb05 0%, #057b05 100%);
+	background: -moz-linear-gradient(top, #50fb05 0%, #057b05 100%);
+	background: -o-linear-gradient(top, #50fb05 0%, #057b05 100%);
+
+	box-shadow: -1px 2px #004200;
+	-webkit-box-shadow: -1px 2px #004200;
+	-moz-box-shadow: -1px 2px #004200;
+	-o-box-shadow: -1px 2px #004200;
+}
+
+#search-button2 {
+	height: 13px;
+	width: 50px;
+
+	position: absolute;
+	top: 395px;
+	left: 155px;
+	cursor: pointer;
+
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-o-border-radius: 100px;
+
+	background: linear-gradient(top, #fb6505 0%, #bb0505 100%);
+	background: -webkit-linear-gradient(top, #fb6505 0%, #bb0505 100%);
+	background: -moz-linear-gradient(top, #fb6505 0%, #bb0505 100%);
+	background: -o-linear-gradient(top, #fb6505 0%, #bb0505 100%);
+
+	box-shadow: -1px 2px #7b0000;
+	-webkit-box-shadow: -1px 2px #7b0000;
+	-moz-box-shadow: -1px 2px #7b0000;
+	-o-box-shadow: -1px 2px #7b0000;
+}
+
+/* Formulario de búsqueda */
+.form {
+	position: absolute;
+	width: 40%;
+	top: 83%;
+	left: 22.5%;
+	transform-style: preserve-3d;
+}
+
+form#search {
+	display: none;
+}
+
+.input-search {
+	width: 110px;
+	height: 80px;
+	padding: 4%;
+	outline: none;
+	border: 2px solid #333;
+	font-weight: 600;
+	color: #3a444d;
+	font-size: clamp(8px, 5vw, 1rem);
+	background-color: #30da0c;
+	-webkit-box-shadow: 0 0 20px #003300 inset;
+}
+
+/* Botones de navegación */
+#cross {
+	width: 90px;
+	height: 90px;
+
+	position: absolute;
+	top: 394px;
+	left: 230px;
+}
+
+#left-cross {
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+	z-index: 1;
+
+	position: absolute;
+	left: 0;
+	top: 30px;
+
+	box-shadow: -3px 2px #010101;
+	-webkit-box-shadow: -3px 2px #010101;
+	-moz-box-shadow: -3px 2px #010101;
+	-o-box-shadow: -3px 2px #010101;
+
+	border-top-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-o-border-top-left-radius: 5px;
+
+	border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-o-border-bottom-left-radius: 5px;
+}
+
+#leftT {
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid #111;
+	border-bottom: 10px solid transparent;
+
+	position: absolute;
+	top: 5px;
+	left: 4px;
+}
+
+#leftT:hover {
+	border-right: 10px solid rgb(83, 104, 226);
+	cursor: pointer;
+}
+
+.button {
+	width: 50%;
+	padding: 4%;
+	border-radius: 5px;
+	font-size: clamp(8px, 5vw, 1rem);
+	font-weight: 600;
+	color: white;
+}
+
+.button:active {
+	box-shadow: inset -4px 4px 0 #222;
+	font-size: 0.9rem;
+}
+
+#top-cross {
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+
+	position: absolute;
+	top: 0;
+	left: 30px;
+
+	background: linear-gradient(top, #43484d 0%, #222 80%);
+	background: -webkit-linear-gradient(top, #43484d 0%, #222 80%);
+	background: -moz-linear-gradient(top, #43484d 0%, #222 80%);
+	background: -o-linear-gradient(top, #43484d 0%, #222 80%);
+
+	box-shadow: -1px 2px #010101;
+	-webkit-box-shadow: -1px 2px #010101;
+	-moz-box-shadow: -1px 2px #010101;
+	-o-box-shadow: -1px 2px #010101;
+
+	border-top-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-o-border-top-left-radius: 5px;
+
+	border-top-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+	-o-border-top-right-radius: 5px;
+}
+
+#upT {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #111;
+
+	position: absolute;
+	top: 5px;
+	left: 4px;
+}
+
+#upT:hover {
+	border-bottom: 10px solid rgb(83, 104, 226);
+	cursor: pointer;
+}
+
+#right-cross {
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+
+	position: absolute;
+	top: 30px;
+	right: 0;
+
+	box-shadow: -3px 2px #010101;
+	-webkit-box-shadow: -3px 2px #010101;
+	-moz-box-shadow: -3px 2px #010101;
+	-o-box-shadow: -3px 2px #010101;
+
+	border-top-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+	-o-border-top-right-radius: 5px;
+
+	border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-o-border-bottom-right-radius: 5px;
+}
+
+#rightT {
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-left: 10px solid #111;
+	border-bottom: 10px solid transparent;
+
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+
+#rightT:hover {
+	border-left: 10px solid rgb(83, 104, 226);
+	cursor: pointer;
+}
+
+#mid-cross {
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+
+	position: absolute;
+	top: 30px;
+	left: 30px;
+
+	box-shadow: -3px 2px #010101;
+	-webkit-box-shadow: -3px 2px #010101;
+	-moz-box-shadow: -3px 2px #010101;
+	-o-box-shadow: -3px 2px #010101;
+}
+
+#midCircle {
+	width: 20px;
+	height: 20px;
+
+	position: absolute;
+	top: 5px;
+	left: 4px;
+
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-o-border-radius: 30px;
+
+	background: radial-gradient(#111, #222);
+	background: -webkit-radial-gradient(#111, #222);
+	background: -moz-radial-gradient(#111, #222);
+	background: -o-radial-gradient(#111, #222);
+}
+
+#bot-cross {
+	width: 30px;
+	height: 30px;
+	background-color: #222;
+
+	position: absolute;
+	bottom: 0;
+	left: 30px;
+
+	box-shadow: -3px 2px #010101;
+	-webkit-box-shadow: -3px 2px #010101;
+	-moz-box-shadow: -3px 2px #010101;
+	-o-box-shadow: -3px 2px #010101;
+
+	border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-o-border-bottom-left-radius: 5px;
+
+	border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-o-border-bottom-right-radius: 5px;
+}
+
+#downT {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #111;
+
+	position: absolute;
+	bottom: 5px;
+	left: 4px;
+}
+
+#downT:hover {
+	border-top: 10px solid rgb(83, 104, 226);
+	cursor: pointer;
+}
+
+/* Parte derecha de la Pokédex (Estadísticas) */
+#right {
+	width: 350px;
+	height: 500px;
+	float: left;
+	position: relative;
+	z-index: 0;
+}
+
+#close-container {
+	width: auto;
+	height: auto;
+}
+
+#close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 0px;
+	top: 270px;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 2;
+	pointer-events: auto;
+}
+
+/* Pantalla de estadísticas */
+#stats-screen {
+	height: 130px;
+	width: 280px;
+	padding: 10px;
+	background-color: #acc2a7;
+	z-index: 1;
+	font-size: 13px;
+	font-family: 'Inconsolata', monospace;
+
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	top: 130px;
+	left: 25px;
+	overflow: auto;
+	overflow-y: scroll;
+
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+
+	box-shadow: 0 0 20px #3f3f3f inset;
+	-webkit-box-shadow: 0 0 20px #3f3f3f inset;
+	-moz-box-shadow: 0 0 20px #3f3f3f inset;
+	-o-box-shadow: 0 0 20px #3f3f3f inset;
+}
+
+#stats-screen .column {
+    display: none;
+}
+
+#stats-screen strong {
+	color: #050505;
+	font-weight: bold;
+}
+
+#stats-screen span {
+	color: #3c3a3a;
+	display: block;
+	margin-top: 5px;
+}
+
+/* Estilo del scroll */
+#stats-screen::-webkit-scrollbar {
+	width: 8px;
+	background-color: transparent;
+}
+
+#stats-screen::-webkit-scrollbar-button {
+	display: none;
+}
+
+#stats-screen::-webkit-scrollbar-thumb {
+	background-color: #000000;
+	border-radius: 10px;
+	border: 1px solid #4e4949;
+}
+
+#stats-screen::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+#loading-screen {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(4, 4, 4);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    display: none;
+}
+
+.column {
+	flex: 1;
+	padding: 0 15px;
+}
+
+.left-column, .right-column {
+	text-align: left;
+}
+
+.pokemon-type {
+	font-weight: bold;
+	border-radius: 5px;
+	color: white;
+	margin-right: 5px;
+	text-align: center;
+}
+
+/* Colores para los tipos de Pokémon */
+.pokemon-type.fire {
+	background-color: #f08030;
+	padding: 5px;
+}
+
+.pokemon-type.water {
+	background-color: #0099ff;
+	padding: 5px;
+}
+
+.pokemon-type.grass {
+	background-color: #78c850;
+	padding: 5px;
+}
+
+.pokemon-type.electric {
+	background-color: #f8d030;
+	padding: 5px;
+}
+
+.pokemon-type.poison {
+	background-color: #a040a0;
+	padding: 5px;
+}
+
+.pokemon-type.flying {
+	background-color: #a890f0;
+	padding: 5px;
+}
+
+.pokemon-type.ice {
+	background-color: #98d8d8;
+	padding: 5px;
+}
+
+.pokemon-type.fighting {
+	background-color: #c03028;
+	padding: 5px;
+}
+
+.pokemon-type.psychic {
+	background-color: #f85888;
+	padding: 5px;
+}
+
+.pokemon-type.rock {
+	background-color: #b8a038;
+	padding: 5px;
+}
+
+.pokemon-type.ground {
+	background-color: #e0c068;
+	padding: 5px;
+}
+
+.pokemon-type.bug {
+	background-color: #a8b820;
+	padding: 5px;
+}
+
+.pokemon-type.steel {
+	background-color: #b8b8d0;
+	padding: 5px;
+}
+
+.pokemon-type.dragon {
+	background-color: #7038f8;
+	padding: 5px;
+}
+
+.pokemon-type.ghost {
+	background-color: #705898;
+	padding: 5px;
+}
+
+.pokemon-type.dark {
+	background-color: #705848;
+	padding: 5px;
+}
+
+.pokemon-type.fairy {
+	background-color: #f0b6bc;
+	padding: 5px;
+}
+
+.pokemon-type.normal {
+	background-color: #6e6e6e;
+	padding: 5px;
+}
+
+.pokemon-stats {
+	color: #3c3a3a;
+	display: block;
+	list-style-type: none; 
+}
+
+/* Botones azules */
+#blue-buttons1 {
+	z-index: 1;
+
+	position: absolute;
+	top: 295px;
+	left: 40px;
+	width: 280px;
+}
+
+.blue-button {
+	height: 35px;
+	width: 49px;
+	background-color: #003300;
+	float: left;
+	margin-right: 7px;
+
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+
+	background: linear-gradient(top, #307bfb 0%, #0530e5 80%);
+	background: -webkit-linear-gradient(top, #307bfb 0%, #0530e5 80%);
+	background: -moz-linear-gradient(top, #307bfb 0%, #0530e5 80%);
+	background: -o-linear-gradient(top, #307bfb 0%, #0530e5 80%);
+
+	box-shadow: -1px 2px #001c91;
+	-webkit-box-shadow: -1px 2px #001c91;
+	-moz-box-shadow: -1px 2px #001c91;
+	-o-box-shadow: -1px 2px #001c91;
+}
+
+#blue-buttons2 {
+	z-index: 1;
+
+	position: absolute;
+	top: 335px;
+	left: 40px;
+	width: 280px;
+}
+
+/* Botones adicionales */
+#white-buttons1 {
+	width: 35px;
+	height: 30px;
+	float: left;
+	z-index: 1;
+	position: absolute;
+	top: 393px;
+	left: 40px;
+
+	background: linear-gradient(top, #b5bec9 0%, #ffffff 80%);
+	background: -webkit-linear-gradient(top,#b5bec9 0%, #ffffff 80%);
+	background: -moz-linear-gradient(top,#b5bec9 0%, #ffffff 80%);
+	background: -o-linear-gradient(top, #b5bec9 0%, #ffffff 80%);
+
+	box-shadow: -1px 2px #7b0000;
+    -webkit-box-shadow: -1px 2px #7b0000;
+    -moz-box-shadow: -1px 2px #7b0000;
+    -o-box-shadow: -1px 2px #7b0000;
+}
+
+#white-buttons2 {
+	width: 35px;
+	height: 30px;
+	float: left;
+	z-index: 1;
+	position: absolute;
+	top: 393px;
+	left: 75px;
+
+	background: linear-gradient(top, #b5bec9 0%, #ffffff 80%);
+	background: -webkit-linear-gradient(top,#b5bec9 0%, #ffffff 80%);
+	background: -moz-linear-gradient(top,#b5bec9 0%, #ffffff 80%);
+	background: -o-linear-gradient(top, #b5bec9 0%, #ffffff 80%);
+
+	box-shadow: -1px 2px #7b0000;
+    -webkit-box-shadow: -1px 2px #7b0000;
+    -moz-box-shadow: -1px 2px #7b0000;
+    -o-box-shadow: -1px 2px #7b0000;
+}
+
+#black-buttons1 {
+	height: 10px;
+    width: 40px;
+    position: absolute;
+    top: 385px;
+    right: 35px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -o-border-radius: 100px;
+    background: linear-gradient(top, #0b0400 0%, #1e1e1e 100%);
+    background: -webkit-linear-gradient(top, #747373 0%, #0e0e0e 100%);
+    background: -moz-linear-gradient(top, #0b0b0b 0%, #070707 100%);
+    background: -o-linear-gradient(top, #090909 0%, #171616 100%);
+    box-shadow: -1px 2px #7b0000;
+    -webkit-box-shadow: -1px 2px #7b0000;
+    -moz-box-shadow: -1px 2px #7b0000;
+    -o-box-shadow: -1px 2px #7b0000;
+}
+
+#black-buttons2 {
+	height: 10px;
+    width: 40px;
+    position: absolute;
+    top: 385px;
+    right: 90px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -o-border-radius: 100px;
+    background: linear-gradient(top, #0b0400 0%, #1e1e1e 100%);
+    background: -webkit-linear-gradient(top, #747373 0%, #0e0e0e 100%);
+    background: -moz-linear-gradient(top, #0b0b0b 0%, #070707 100%);
+    background: -o-linear-gradient(top, #090909 0%, #171616 100%);
+    box-shadow: -1px 2px #7b0000;
+    -webkit-box-shadow: -1px 2px #7b0000;
+    -moz-box-shadow: -1px 2px #7b0000;
+    -o-box-shadow: -1px 2px #7b0000;
+}
+
+#yellow-button {
+	height: 25px;
+	width: 25px;
+	background-color: #f5ed0c;
+	z-index: 1;
+
+	position: absolute;
+	top: 410px;
+	right: 40px;
+
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-o-border-radius: 100px;
+
+	background: linear-gradient(top, #307bfb 0%, #0530e5 80%);
+	background: -webkit-linear-gradient(top, #d8e709 0%, #afba09 80%);
+	background: -moz-linear-gradient(top, #307bfb 0%, #0530e5 80%);
+	background: -o-linear-gradient(top, #307bfb 0%, #0530e5 80%);
+
+	box-shadow: -3px 2px #001c91;
+	-webkit-box-shadow: -3px 2px #413f05;
+	-moz-box-shadow: -3px 2px #001c91;
+	-o-box-shadow: -3px 2px #001c91;
+}
+
+#black-box1 {
+	width: 120px;
+	height: 40px;
+	z-index: 1;
+	background-color: #222;
+	position: absolute;
+	top: 445px;
+	left: 35px;
+
+	background: linear-gradient(top, #5e646c 0%, #010101 80%);
+	background: -webkit-linear-gradient(top, #5e646c 0%, #010101 80%);
+	background: -moz-linear-gradient(top, #5e646c 0%, #010101 80%);
+	background: -o-linear-gradient(top, #5e646c 0%, #010101 80%);
+
+	box-shadow: -1px 2px #7b0000;
+    -webkit-box-shadow: -1px 2px #7b0000;
+    -moz-box-shadow: -1px 2px #7b0000;
+    -o-box-shadow: -1px 2px #7b0000;
+}
+
+#black-box2 {
+	width: 120px;
+	height: 40px;
+	z-index: 1;
+	background-color: #222;
+	position: absolute;
+	top: 445px;
+	left: 185px;
+
+	background: linear-gradient(top, #5e646c 0%, #010101 80%);
+	background: -webkit-linear-gradient(top, #5e646c 0%, #010101 80%);
+	background: -moz-linear-gradient(top, #5e646c 0%, #010101 80%);
+	background: -o-linear-gradient(top, #5e646c 0%, #010101 80%);
+
+	box-shadow: -1px 2px #7b0000;
+    -webkit-box-shadow: -1px 2px #7b0000;
+    -moz-box-shadow: -1px 2px #7b0000;
+    -o-box-shadow: -1px 2px #7b0000;
+}
+
+/* Fondos curvos */
+#bg-curve1-right {
+	width: 350px;
+	height: 80px;
+	background-color: #fff;
+
+	border-top-right-radius: 30px;
+	-webkit-border-top-right-radius: 30px;
+	-moz-border-top-right-radius: 30px;
+	-o-border-top-right-radius: 30px;
+}
+
+#bg-curve2-right {
+	width: 350px;
+	height: 420px;
+	background-color: #c00d0d;
+
+	border-bottom-right-radius: 30px;
+	-webkit-border-bottom-right-radius: 30px;
+	-moz-border-bottom-right-radius: 30px;
+	-o-border-bottom-right-radius: 30px;
+
+	box-shadow: -10px 9px #5e0000;
+	-webkit-box-shadow: -10px 9px #5e0000;
+	-moz-box-shadow: -10px 9px #5e0000;
+	-o-box-shadow: -10px 9px #5e0000;
+}
+
+#curve1-right {
+	width: 166px;
+	height: 451px;
+	background-color: #c00d0d;
+	float: right;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	border-top-right-radius: 85px 60px;
+	-webkit-border-right-left-radius: 85px 60px;
+	-moz-border-right-left-radius: 85px 60px;
+	-o-border-right-left-radius: 85px 60px;
+}
+
+#curve2-right {
+	width: 216px;
+	height: 100px;
+	background-color: #fff;
+	float: left;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	border-bottom-left-radius: 85px 60px;
+	-webkit-border-bottom-left-radius: 85px 60px;
+	-moz-border-bottom-left-radius: 85px 60px;
+	-o-border-bottom-left-radius: 85px 60px;
+}
+
+div#right,
+div#screen,
+div#big-black-button,
+div#search-button1,
+div#search-button2,
+div#cross {
+	display: none;
+}
