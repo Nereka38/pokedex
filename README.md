@@ -16,6 +16,8 @@ Una Pokédex interactiva de la región Kanto construida con **HTML**, **CSS** y 
 
 Los sonidos de los Pokémon son obtenidos desde la plataforma [Pokémon Showdown](https://play.pokemonshowdown.com/audio/cries/). Se reproducen automáticamente cada vez que se muestra un Pokémon, agregando una capa nostálgica y dinámica a la experiencia.
 
+Los sonidos de los Pokémon son obtenidos desde la plataforma [Pokémon Showdown](https://play.pokemonshowdown.com/audio/cries/). Se reproducen automáticamente cada vez que se muestra un Pokémon, agregando una capa nostálgica y dinámica a la experiencia.
+
 ## 🚀 Tecnologías utilizadas
 
 - HTML5
@@ -26,7 +28,7 @@ Los sonidos de los Pokémon son obtenidos desde la plataforma [Pokémon Showdown
 
 ## 📸 Capturas
 
-![Captura de la Pokédex](./images/pokedex-img.png)
+![Captura de la Pokédex](./assets/images/pokedex-img.png)
 
 ## 🛠️ Instalación
 
@@ -38,7 +40,6 @@ Los sonidos de los Pokémon son obtenidos desde la plataforma [Pokémon Showdown
 
   
 ## 🗒️ Instrucciones de uso
-
 Una vez abierta la Pokédex (index.html en tu navegador), puedes interactuar con ella de la siguiente manera:
 
 ### 🔍 Buscar Pokémon
