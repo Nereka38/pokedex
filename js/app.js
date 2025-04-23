@@ -66,12 +66,14 @@ const renderPokemon = async (pokemon) => {
   // Mostrar pantalla de carga
   document.getElementById('loading-screen').style.display = 'block';
   document.getElementById('image-loading').style.display = 'block';
-  document.querySelectorAll('#stats .column').forEach(column => column.style.display = 'none');
+  document.querySelectorAll('#stats-screen .column').forEach(column => column.style.display = 'none');
   pokemonImage.style.display = 'none';
 
   // Obtener datos del Pokémon
   const data = await fetchPokemon(pokemon);
   if (!data) {
+    document.getElementById('loading-screen').style.display = 'none';
+    document.getElementById('image-loading').style.display = 'none';
     pokemonName.innerHTML = 'Not found :c';
     pokemonNumber.innerHTML = '';
     pokemonImage.style.display = 'none';
